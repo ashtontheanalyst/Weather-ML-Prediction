@@ -19,7 +19,6 @@ df['Percent Change YOY'] = (df.groupby(['month']))['Value'].pct_change() * 100
 year_on_year_change = df.groupby(['month'])['Percent Change YOY'].mean()
 
 
-# Plotting with error bars
 plt.figure(figsize=(10, 6))
 plt.bar(year_on_year_change.index, year_on_year_change, capsize=6, color='skyblue')
 plt.title(f"Percentage Change in Temperature by Month in Texas Since {df['year'].iloc[0]}")
@@ -82,7 +81,7 @@ df["month"] = df["date"].dt.month
 df['Percent Change YOY'] = (df.groupby(['month']))['mean_temp'].pct_change() * 100
 year_on_year_change = df.groupby(['month'])['Percent Change YOY'].mean()
 
-# Plotting with error bars
+
 plt.figure(figsize=(10, 6))
 plt.bar(year_on_year_change.index, year_on_year_change, capsize=6, color='skyblue')
 plt.title(f"Percentage Change in Temperature by Month in London Since {df['year'].iloc[0]}")
